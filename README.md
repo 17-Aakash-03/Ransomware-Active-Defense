@@ -4,6 +4,8 @@ Real-time Active Defense System Against Ransomware
 
 This is a proactive cybersecurity defense system designed to detect and block ransomware attacks in real-time. Unlike traditional antiviruses that rely on signatures, this system monitors file system behavior and uses "honeypots" (decoy files) to identify malicious encryption attempts.
 
+ View Full Project Report (PDF)
+
  Key Features
 
 Honeypot Traps: Deploys decoy files in strategic locations. If these files are modified, the system instantly flags it as an attack.
@@ -14,7 +16,7 @@ Automated Response: Immediately kills the suspicious process to prevent further 
 
 Entropy Analysis: Analyzes file entropy to detect encryption (randomness) in file structures.
 
-🛠️ Tech Stack
+Tech Stack
 
 Language: Python
 
@@ -34,7 +36,7 @@ Navigate to the project folder:
 cd ActiveDefence_project
 
 
-Install dependencies (if listed in a requirements file) or manually install needed libraries:
+Install dependencies:
 
 pip install watchdog psutil pandas scikit-learn
 
@@ -44,6 +46,6 @@ Run the main script:
 python main.py
 
 
-Disclaimer
+⚠️ Disclaimer
 
 This tool is for educational and defensive purposes only. Do not use this code to develop malware.
