@@ -1,6 +1,5 @@
 Real-Time Active Defense System Against Ransomware
 
-View Full Project Report (PDF)
 
 About the Project
 
