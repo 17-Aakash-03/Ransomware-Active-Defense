@@ -2,7 +2,7 @@ Real-Time Active Defense System Against Ransomware
 
 View Full Project Report (PDF)
 
-About the Project->
+About the Project -->
 
 This project is a Behavioral Active Defense System designed to stop ransomware attacks in their tracks. Unlike traditional antivirus software that relies on "signatures" (databases of known viruses), this system monitors the behavior of files in real-time.
 
