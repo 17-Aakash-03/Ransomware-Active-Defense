@@ -1,7 +1,8 @@
 Real-Time Active Defense System Against Ransomware
 
+View Full Project Report (PDF)
 
-About the Project
+About the Project->
 
 This project is a Behavioral Active Defense System designed to stop ransomware attacks in their tracks. Unlike traditional antivirus software that relies on "signatures" (databases of known viruses), this system monitors the behavior of files in real-time.
 
@@ -11,31 +12,51 @@ Problems Solved
 
 This project addresses three critical failures in traditional cybersecurity:
 
-Zero-Day Attacks: Traditional antiviruses cannot stop new, unknown ransomware because they don't have a signature for it yet. This project solves that by ignoring signatures and looking for bad behavior instead.
+1. Zero-Day Attacks
 
-Latency: Human reaction time is too slow to stop a ransomware attack once it starts. This system reacts autonomously in milliseconds.
+Traditional antiviruses cannot stop new, unknown ransomware because they don't have a signature for it yet. This project solves that by ignoring signatures and looking for bad behavior instead.
 
-Data Loss: By acting instantly, the system limits the damage to just 1 or 2 files before the threat is neutralized, rather than losing the entire hard drive.
+2. Latency
+
+Human reaction time is too slow to stop a ransomware attack once it starts. This system reacts autonomously in milliseconds.
+
+3. Data Loss
+
+By acting instantly, the system limits the damage to just 1 or 2 files before the threat is neutralized, rather than losing the entire hard drive.
 
 How It Works (The Logic)
 
 The system operates on a "Detect → Hunt → Kill" cycle:
 
-Monitor: The system uses the watchdog library to watch a specific directory for "Modified" events.
+1. Monitor
 
-Analyze: It counts how many files are changed within a short time window (e.g., 3 files in 100ms).
+The system uses the watchdog library to watch a specific directory for "Modified" events.
 
-Hunt: If the threshold is breached, it uses psutil to scan all running processes and find which Process ID (PID) is holding those files open.
+2. Analyze
 
-Kill: It checks if the PID is on a "Whitelist" (like Notepad or Explorer). If not, it issues a kill() command to terminate the process immediately.
+It counts how many files are changed within a short time window (e.g., 3 files in 100ms).
+
+3. Hunt
+
+If the threshold is breached, it uses psutil to scan all running processes and find which Process ID (PID) is holding those files open.
+
+4. Kill
+
+It checks if the PID is on a "Whitelist" (like Notepad or Explorer). If not, it issues a kill() command to terminate the process immediately.
 
 Results
 
-Reaction Time: The system successfully detects high-frequency file changes within milliseconds.
+Reaction Time
 
-Success Rate: In simulated tests (using a dummy attacker script), the system successfully terminated the attacker process 100% of the time after the 3rd file modification.
+The system successfully detects high-frequency file changes within milliseconds.
 
-False Positives: Safe applications (like Notepad) were added to a whitelist to prevent accidental termination.
+Success Rate
+
+In simulated tests (using a dummy attacker script), the system successfully terminated the attacker process 100% of the time after the 3rd file modification.
+
+False Positives
+
+Safe applications (like Notepad) were added to a whitelist to prevent accidental termination.
 
 Tech Stack
 
@@ -50,12 +71,6 @@ Environment: Tested on Windows 10 (VirtualBox)
 How to Run
 
 Prerequisites: You need Python installed.
-
-Clone the Repository:
-
-git clone [https://github.com/17-Aakash-03/Ransomware-Active-Defense.git](https://github.com/17-Aakash-03/Ransomware-Active-Defense.git)
-cd Ransomware-Active-Defense
-
 
 Install Required Libraries:
 
