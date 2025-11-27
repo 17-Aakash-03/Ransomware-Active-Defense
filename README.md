@@ -46,6 +46,6 @@ Run the main script:
 python main.py
 
 
-⚠️ Disclaimer
+Disclaimer
 
 This tool is for educational and defensive purposes only. Do not use this code to develop malware.
